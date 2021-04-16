@@ -54,11 +54,16 @@ document.addEventListener("DOMContentLoaded", () => {
 document.addEventListener('DOMContentLoaded', () => {
     //DOM elements
     async function updateTime(){
-        const response = await fetch('http://worldtimeapi.org/api//timezone/{area}/{location}');
+        const response = await fetch("http://worldtimeapi.org/api/ip");
         const data = await response.json();
-        console.log(response);
+        if(response.ok){
+          timeDiv.textContent = `${data.datetime}`
+        }
+        console.log(data.datetime);
         console.log(data);
-
+        
     }
+    //call when page loaded
+    updateTime()
 
-})
+});
