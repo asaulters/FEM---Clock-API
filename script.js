@@ -42,7 +42,7 @@ document.addEventListener("DOMContentLoaded", () => {
         const data = await response.json();
         if (response .ok){
             //upate DOM elements
-            locationDiv.textContent= `${data.city}, ${data.country_code}`;
+            locationDiv.textContent= ` ${data.city}, ${data.country_code}`;
         } else {
             console.log("Error@!")
         }
@@ -62,15 +62,22 @@ document.addEventListener('DOMContentLoaded', () => {
           //get hours and minutes for clock
           const now =  new Date()
           let a = now.getHours();
-          let b = now.getMinutes()
+          let b = now.getMinutes()<10?'0':'' + now.getMinutes();
           //insert hours, mins, and TZ into html
           timeDiv.textContent = `${a}:${b}`;
           timeZoneDiv.textContent = ` ${data.abbreviation}`
           //update greeting and background based upon time
           if(a >= 5 && a <= 12){
-            greetingDiv.textContent = "Good morning";
-            document.style.background-image = "url('/assets/desktop/bg-image-daytime.jpg');"
+            greetingDiv.textContent = "Good morning, it's currently";
+            document.body.style.background = 'red';
+          } else if (a >= 12 & a <= 18){
+            greetingDiv.textContent ="Good afternoon, it's currently";
+            document.body.style.background = 'red';
+          } else {
+            greetingDiv.textContent ="Good evening, it's currently";
+            // document.body.style.background = url('/assets/desktop/bg-image-nighttime.jpg');
           }
+  
         }
         
     }
