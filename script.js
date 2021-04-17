@@ -1,9 +1,11 @@
 //DOM
 let quoteDiv = document.querySelector('.TopQuote');
 let locationDiv = document.querySelector('.location');
-let timeDiv = document.querySelector('.topTimeH1')
+let timeDiv = document.querySelector('.topTimeH1');
+let timeZoneDiv = document.querySelector('.topTimeH4');
+let backPic = document.querySelector('.main-Div');
+let greetingDiv = document.querySelector('.topTimeGreeting');
 
-console.log(timeDiv)
 
 //Quote
 document.addEventListener("DOMContentLoaded", () => {
@@ -50,20 +52,29 @@ document.addEventListener("DOMContentLoaded", () => {
 
 });
 
-//clock API
+// clock API
 document.addEventListener('DOMContentLoaded', () => {
     //DOM elements
     async function updateTime(){
         const response = await fetch("http://worldtimeapi.org/api/ip");
         const data = await response.json();
         if(response.ok){
-          timeDiv.textContent = `${data.datetime}`
+          //get hours and minutes for clock
+          const now =  new Date()
+          let a = now.getHours();
+          let b = now.getMinutes()
+          //insert hours, mins, and TZ into html
+          timeDiv.textContent = `${a}:${b}`;
+          timeZoneDiv.textContent = ` ${data.abbreviation}`
+          //update greeting and background based upon time
+          if(a >= 5 && a <= 12){
+            greetingDiv.textContent = "Good morning";
+            document.style.background-image = "url('/assets/desktop/bg-image-daytime.jpg');"
+          }
         }
-        console.log(data.datetime);
-        console.log(data);
         
     }
     //call when page loaded
-    updateTime()
-
+    updateTime();
 });
+
