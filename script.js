@@ -64,7 +64,7 @@ document.addEventListener('DOMContentLoaded', () => {
           let a = now.getHours();
           let b = now.getMinutes()<10?'0':'' + now.getMinutes();
           //insert hours, mins, and TZ into html
-          timeDiv.textContent = `${a}:${b}`;
+          timeDiv.textContent = `${a}:${b}<10?'0':'' + date.getMinutes() );`;
           timeZoneDiv.textContent = ` ${data.abbreviation}`
           //update greeting and background based upon time
           if(a >= 5 && a <= 12){
