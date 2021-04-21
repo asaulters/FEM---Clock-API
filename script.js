@@ -2,7 +2,7 @@
 let quoteDiv = document.querySelector('.TopQuote');
 let locationDiv = document.querySelector('.location');
 let timeDiv = document.querySelector('.topTimeH1');
-let timeZoneDiv = document.querySelector('.topTimeH4');
+let topTimeP = document.querySelector('.topTimeP');
 let backPic = document.querySelector('.main-Div');
 let greetingDiv = document.querySelector('.topTimeGreeting');
 
@@ -42,7 +42,7 @@ document.addEventListener("DOMContentLoaded", () => {
         const data = await response.json();
         if (response .ok){
             //upate DOM elements
-            locationDiv.textContent= ` ${data.city}, ${data.country_code}`;
+            locationDiv.textContent= `In ${data.city}, ${data.country_code}`;
         } else {
             console.log("Error@!")
         }
@@ -55,6 +55,7 @@ document.addEventListener("DOMContentLoaded", () => {
 // clock API
 document.addEventListener('DOMContentLoaded', () => {
     //DOM elements
+    
     let ba1 = document.querySelector('.bottomA1');
     let ba2 = document.querySelector('.bottomA2');
     let ba3 = document.querySelector('.bottomA3');
@@ -64,30 +65,30 @@ document.addEventListener('DOMContentLoaded', () => {
         const data = await response.json();
         if(response.ok){
           //get hours and minutes for clock
-          const now =  new Date()
+          const now =  new Date();
           let a = now.getHours();
-          let b = now.getMinutes()<10?'0':'' + now.getMinutes();
+          let b = now.getMinutes();
           //insert hours, mins, and TZ into html
-          timeDiv.textContent = `${a}:${b}`;
-          timeZoneDiv.textContent = ` ${data.abbreviation}`
+          timeDiv.textContent = `${a}:${b} `;
+          topTimeP.textContent = ` ${data.abbreviation}`;
           //insert bottom API output
           ba1.textContent =`${data.timezone}`;
           ba2.textContent = `${data.day_of_year}`;
           ba3.textContent = `${data.day_of_week}`;
           ba4.textContent = `${data.week_number}`;
           //update greeting and background based upon time
-          if(a >= 5 && a <= 12){
-            greetingDiv.textContent = "Good morning, it's currently";
-            bgDay.style.display = "block"
-            bgNight.style.display = "none"
-          } else if (a >= 12 & a <= 18){
-            greetingDiv.textContent ="Good afternoon, it's currently";
-            bgDay.style.display = "block"
-            bgNight.style.display = "none"
-          } else {
-            greetingDiv.textContent ="Good evening, it's currently";
-            bgNight.style.display = "block"
-            bgDay.style.display = "none"
+          if(a >= 5 && a < 12){
+            greetingDiv.textContent = "Good morning";
+            bgDay.style.display = "block";
+            bgNight.style.display = "none";
+          } else if (a >= 12 && a < 19){
+            greetingDiv.textContent ="Good afternoon";
+            bgDay.style.display = "block";
+            bgNight.style.display = "none";
+          } else if (a >= 19 || a < 5){
+            greetingDiv.textContent ="Good evening";
+            bgNight.style.display = "block";
+            bgDay.style.display = "none";
             // document.body.style.background = url('/assets/desktop/bg-image-nighttime.jpg');
           }
   
