@@ -2,10 +2,12 @@
 let quoteDiv = document.querySelector('.TopQuote');
 let locationDiv = document.querySelector('.location');
 let timeDiv = document.querySelector('.topTimeH1');
-let topTimeP = document.querySelector('.topTimeP');
+let topTimeP = document.querySelector('.topTimeH4');
 let backPic = document.querySelector('.main-Div');
 let greetingDiv = document.querySelector('.topTimeGreeting');
-
+let moreLess = document.querySelector("#more-less");
+let bottom = document.querySelector(".main-Bottom");
+let TopQuote = document.querySelector(".TopQuote");
 
 //Quote
 document.addEventListener("DOMContentLoaded", () => {
@@ -68,8 +70,11 @@ document.addEventListener('DOMContentLoaded', () => {
           const now =  new Date();
           let a = now.getHours();
           let b = now.getMinutes();
+          let c = data.datetime;
+          let d = c.substr(11, 5);
+          
           //insert hours, mins, and TZ into html
-          timeDiv.textContent = `${a}:${b} `;
+          timeDiv.textContent = d;
           topTimeP.textContent = ` ${data.abbreviation}`;
           //insert bottom API output
           ba1.textContent =`${data.timezone}`;
@@ -98,4 +103,22 @@ document.addEventListener('DOMContentLoaded', () => {
     //call when page loaded
     updateTime();
 });
+
+//More-less 
+function toggleMoreLess(){
+  let status = "more"
+  if (moreLess.value == "more"){
+    bottom.style.display = "block";
+    TopQuote.style.display = "none"
+    status = "more";
+    console.log(status);
+  } else if ( moreLess.value ==  "less" ){
+    bottom.style.display ="none";
+    TopQuote.style.display = "block"
+    status = "less";
+    console.log(status)
+  }
+}
+
+moreLess.addEventListener('change', toggleMoreLess)
 
