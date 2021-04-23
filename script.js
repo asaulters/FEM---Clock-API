@@ -8,6 +8,8 @@ let greetingDiv = document.querySelector('.topTimeGreeting');
 let moreLess = document.querySelector("#more-less");
 let bottom = document.querySelector(".main-Bottom");
 let TopQuote = document.querySelector(".TopQuote");
+let mainDiv = document.querySelector(".main-Div");
+// let bgNight = document.querySelector(".bgNight");
 
 //Quote
 document.addEventListener("DOMContentLoaded", () => {
@@ -84,16 +86,16 @@ document.addEventListener('DOMContentLoaded', () => {
           //update greeting and background based upon time
           if(a >= 5 && a < 12){
             greetingDiv.textContent = "Good morning";
-            bgDay.style.display = "block";
-            bgNight.style.display = "none";
+            document.body.style.backgroundImage= url('/assets/mobile/bg-image-daytime.jpg');
+            // mainDiv.style.backgroundImage=url('/assets/mobile/bg-image-daytime.jpg');
           } else if (a >= 12 && a < 19){
             greetingDiv.textContent ="Good afternoon";
-            bgDay.style.display = "block";
-            bgNight.style.display = "none";
+            document.body.style.backgroundImage= url('/assets/mobile/bg-image-daytime.jpg');
+            // mainDiv.style.backgroundImage=url('/assets/mobile/bg-image-daytime.jpg');
           } else if (a >= 19 || a < 5){
             greetingDiv.textContent ="Good evening";
-            bgNight.style.display = "block";
-            bgDay.style.display = "none";
+
+            // mainDiv.style.backgroundImage=url('/assets/mobile/bg-image-nighttime.jpg');
             // document.body.style.background = url('/assets/desktop/bg-image-nighttime.jpg');
           }
   
@@ -106,7 +108,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
 //More-less 
 function toggleMoreLess(){
-  let status = "more"
+  let status = "less"
   if (moreLess.value == "more"){
     bottom.style.display = "block";
     TopQuote.style.display = "none"
@@ -118,6 +120,10 @@ function toggleMoreLess(){
     status = "less";
     console.log(status)
   }
+}
+
+function newStyle(){
+  
 }
 
 moreLess.addEventListener('change', toggleMoreLess)
