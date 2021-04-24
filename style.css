@@ -5,20 +5,16 @@
     display: grid;
     grid-row: 65% 35%;
 }
-.main-Top{
-    grid-row: 1/2;
-    display: grid;
 
-}
 .bgDay{
-    /* background-image: url(/assets/mobile/bg-image-daytime.jpg); */
+    background-image: url(/assets/mobile/bg-image-daytime.jpg);
     background-size: cover;
     color: white;
     background-repeat: no-repeat;
     
 }
 .bgNight{
-    /* background-image: url(/assets/mobile/bg-image-nighttime.jpg); */
+    background-image: url(/assets/mobile/bg-image-nighttime.jpg);
     background-size: cover;
     background-repeat: no-repeat;
     color: white;
@@ -31,17 +27,49 @@
     padding: 5%;
     font-family: 'Inter', sans-serif;
 }
+/* more less styles */
+/* .main-Top{
+    grid-row: 1/2;
+    display: grid;
+    height: 200;
+}
 
 .TopTime{
     margin-top: 20%;
     padding: 10%;
-}
+    height: min-content;
+} */
 .topTimeH1{
     font-size: 95px;
     font-weight: 900;
     margin-bottom: -5%;
 }
+.main-Top2{
+    display: block;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr;
+    /* height: 300px; */
+}
 
+.TopTimeMore{
+    display: block;
+    grid-row: 1/2;
+    grid-column: 1/2;
+    padding-left: 8%;
+    margin-top: -5%;
+}
+/* .topTimeGreeting{
+    font-size: 30px;
+    font-weight: 900;
+    margin-bottom: -10%;
+    margin-top: 55%;
+} */
+.topTimeGreetingMore{
+    font-size: 30px;
+    font-weight: 900;
+    margin-top: 20%;
+    /* padding-left: 10%; */
+}
 
 
 
@@ -127,12 +155,7 @@
     font-weight: 800;
 }
 
-.topTimeGreeting{
-    font-size: 30px;
-    font-weight: 900;
-    margin-bottom: -10%;
-    margin-top: 55%;
-}
+
 .times{
     display: inline-block;
     flex-direction: column;

@@ -9,7 +9,9 @@ let moreLess = document.querySelector("#more-less");
 let bottom = document.querySelector(".main-Bottom");
 let TopQuote = document.querySelector(".TopQuote");
 let mainDiv = document.querySelector(".main-Div");
-// let bgNight = document.querySelector(".bgNight");
+let bg1 = '/assets/mobile/bg-image-daytime.jpg';
+let bg2 = "/assets/mobile/bg-image-nighttime.jpg";
+
 
 //Quote
 document.addEventListener("DOMContentLoaded", () => {
@@ -64,6 +66,9 @@ document.addEventListener('DOMContentLoaded', () => {
     let ba2 = document.querySelector('.bottomA2');
     let ba3 = document.querySelector('.bottomA3');
     let ba4 = document.querySelector('.bottomA4');
+    let bgNight = document.querySelector(".bgNight");
+    let bgDay = document.querySelector(".bgDay");
+
     async function updateTime(){
         const response = await fetch("http://worldtimeapi.org/api/ip");
         const data = await response.json();
@@ -85,18 +90,20 @@ document.addEventListener('DOMContentLoaded', () => {
           ba4.textContent = `${data.week_number}`;
           //update greeting and background based upon time
           if(a >= 5 && a < 12){
-            greetingDiv.textContent = "Good morning";
-            document.body.style.backgroundImage= url('/assets/mobile/bg-image-daytime.jpg');
-            // mainDiv.style.backgroundImage=url('/assets/mobile/bg-image-daytime.jpg');
+            greetingDiv.textContent = "Good morning g";
+            // document.body.style.backgroundImage= `${bg1}`;
+            bgNight.style.display="none"
+            bgDay.style.display = "block"
           } else if (a >= 12 && a < 19){
             greetingDiv.textContent ="Good afternoon";
-            document.body.style.backgroundImage= url('/assets/mobile/bg-image-daytime.jpg');
-            // mainDiv.style.backgroundImage=url('/assets/mobile/bg-image-daytime.jpg');
+            // document.body.style.backgroundImage= `${bg1}`;
+            bgNight.style.display="none"
+            bgDay.style.display = "block"
           } else if (a >= 19 || a < 5){
             greetingDiv.textContent ="Good evening";
-
-            // mainDiv.style.backgroundImage=url('/assets/mobile/bg-image-nighttime.jpg');
-            // document.body.style.background = url('/assets/desktop/bg-image-nighttime.jpg');
+            bgDay.style.display="none"
+            bgNight.style.display = "block"
+            
           }
   
         }
