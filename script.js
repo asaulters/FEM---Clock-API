@@ -10,7 +10,7 @@ let bottom = document.querySelector(".main-Bottom");
 let TopQuote = document.querySelector(".TopQuote");
 let mainDiv = document.querySelector(".main-Div");
 let bg1 = '/assets/mobile/bg-image-daytime.jpg';
-let bg2 = "/assets/mobile/bg-image-nighttime.jpg";
+let bg2 = "url('/assets/mobile/bg-image-nighttime.jpg')";
 
 
 //Quote
@@ -91,18 +91,13 @@ document.addEventListener('DOMContentLoaded', () => {
           //update greeting and background based upon time
           if(a >= 5 && a < 12){
             greetingDiv.textContent = "Good morning g";
-            // document.body.style.backgroundImage= `${bg1}`;
-            bgNight.style.display="none"
-            bgDay.style.display = "block"
+            document.body.style.backgroundImage= "url('/assets/mobile/bg-image-daytime.jpg')";
           } else if (a >= 12 && a < 19){
             greetingDiv.textContent ="Good afternoon";
-            // document.body.style.backgroundImage= `${bg1}`;
-            bgNight.style.display="none"
-            bgDay.style.display = "block"
+            document.body.style.backgroundImage= "url('/assets/mobile/bg-image-daytime.jpg')";
           } else if (a >= 19 || a < 5){
             greetingDiv.textContent ="Good evening";
-            bgDay.style.display="none"
-            bgNight.style.display = "block"
+            document.body.style.backgroundImage= "url('/assets/mobile/bg-image-nighttime.jpg')";
             
           }
   
@@ -134,4 +129,3 @@ function newStyle(){
 }
 
 moreLess.addEventListener('change', toggleMoreLess)
-

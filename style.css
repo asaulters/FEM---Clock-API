@@ -7,7 +7,7 @@
 }
 
 .bgDay{
-    background-image: url(/assets/mobile/bg-image-daytime.jpg);
+    background-image: url("/assets/mobile/bg-image-daytime.jpg");
     background-size: cover;
     color: white;
     background-repeat: no-repeat;
@@ -25,7 +25,9 @@
     text-align: left;
     font-size: 20px;
     padding: 5%;
+    font-weight: 800;
     font-family: 'Inter', sans-serif;
+    
 }
 /* more less styles */
 /* .main-Top{
@@ -44,7 +46,7 @@
     font-weight: 900;
     margin-bottom: -5%;
 }
-.main-Top2{
+.main-TopMore{
     display: block;
     grid-template-columns: 1fr;
     grid-template-rows: 1fr;
