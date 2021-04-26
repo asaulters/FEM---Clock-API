@@ -9,8 +9,8 @@ let moreLess = document.querySelector("#more-less");
 let bottom = document.querySelector(".main-Bottom");
 let TopQuote = document.querySelector(".TopQuote");
 let mainDiv = document.querySelector(".main-Div");
-let bg1 = '/assets/mobile/bg-image-daytime.jpg';
-let bg2 = "url('/assets/mobile/bg-image-nighttime.jpg')";
+let topMore = document.querySelector('.main-TopMore')
+let topless = document.querySelector('.main-TopLess')
 
 
 //Quote
@@ -91,13 +91,18 @@ document.addEventListener('DOMContentLoaded', () => {
           //update greeting and background based upon time
           if(a >= 5 && a < 12){
             greetingDiv.textContent = "Good morning g";
-            document.body.style.backgroundImage= "url('/assets/mobile/bg-image-daytime.jpg')";
+            bgNight.style.display="none"
+            bgDay.style.display = "block"
           } else if (a >= 12 && a < 19){
             greetingDiv.textContent ="Good afternoon";
-            document.body.style.backgroundImage= "url('/assets/mobile/bg-image-daytime.jpg')";
+
+            bgNight.style.display="none"
+            bgDay.style.display = "block"
+            
           } else if (a >= 19 || a < 5){
             greetingDiv.textContent ="Good evening";
-            document.body.style.backgroundImage= "url('/assets/mobile/bg-image-nighttime.jpg')";
+            bgDay.style.display="none"
+            bgNight.style.display = "block"
             
           }
   
@@ -114,11 +119,15 @@ function toggleMoreLess(){
   if (moreLess.value == "more"){
     bottom.style.display = "block";
     TopQuote.style.display = "none"
+    topless.style.display = "none"
+    topMore.style.display = "block"
     status = "more";
     console.log(status);
   } else if ( moreLess.value ==  "less" ){
     bottom.style.display ="none";
     TopQuote.style.display = "block"
+    topMore.style.display = "none"
+    topless.style.display = "block"
     status = "less";
     console.log(status)
   }

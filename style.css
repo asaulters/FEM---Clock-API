@@ -3,7 +3,9 @@
 }
 .main-Div{
     display: grid;
-    grid-row: 65% 35%;
+    grid-template-rows: 65% 35%;
+    height: 100vh;
+    position: relative;
 }
 
 .bgDay{
@@ -14,7 +16,7 @@
     
 }
 .bgNight{
-    background-image: url(/assets/mobile/bg-image-nighttime.jpg);
+    background-image: "url('/assets/mobile/bg-image-nighttime.jpg')";
     background-size: cover;
     background-repeat: no-repeat;
     color: white;
@@ -30,27 +32,31 @@
     
 }
 /* more less styles */
-/* .main-Top{
-    grid-row: 1/2;
+.main-TopLess{
+    /* grid-row: 1/2; */
     display: grid;
-    height: 200;
+    height:100vh;
+    width: 100%;
+    /* position: absolute; */
+
 }
 
-.TopTime{
-    margin-top: 20%;
-    padding: 10%;
-    height: min-content;
-} */
-.topTimeH1{
-    font-size: 95px;
-    font-weight: 900;
-    margin-bottom: -5%;
-}
 .main-TopMore{
     display: block;
     grid-template-columns: 1fr;
     grid-template-rows: 1fr;
-    /* height: 300px; */
+    height: 60vh;
+    display: none;
+}
+
+.TopTime{
+    margin-top: 20%;
+    height: 100%;
+    padding: 10%;
+    height: min-content;
+    /* position: absolute; */
+    bottom: 0;
+    left: 0;
 }
 
 .TopTimeMore{
@@ -59,6 +65,11 @@
     grid-column: 1/2;
     padding-left: 8%;
     margin-top: -5%;
+}
+.topTimeH1{
+    font-size: 95px;
+    font-weight: 900;
+    margin-bottom: -5%;
 }
 /* .topTimeGreeting{
     font-size: 30px;
@@ -90,21 +101,19 @@
     opacity:0.85;
     background-color: black;
     width: 100%;
-    /* padding-top: 5%; */
-    padding-bottom: 5%;
-    margin-top: 5%;
-    /* margin-bottom: -5%; */
-    height: 90%;
-    margin-left: -10px;
+    padding-top: 10%;
+    padding-bottom: 5px;
+    height: minmax(min-content, 35vh);
+    /* margin-left: -10px; */
     margin-right: 0px;
-    grid-row: 3/4;
+    grid-row: 2/4;
     margin: auto;
     box-sizing: border-box;
     display: none;
 }
 
 .bottom-1{
-    
+    height: 100%;
     display: grid;
     padding: 10% 10%;
     grid-template-rows: repeat(4, 1fr);
@@ -112,7 +121,10 @@
     font-family: 'Inter', sans-serif;
     font-size: 20px;
     opacity: 1;
-    margin-top: 10%;
+    margin-top: -10%;
+    width: 75%;
+    
+    
 }
 
 .bottomP1{
