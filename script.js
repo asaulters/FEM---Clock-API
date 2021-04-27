@@ -10,7 +10,7 @@ let bottom = document.querySelector(".main-Bottom");
 let TopQuote = document.querySelector(".TopQuote");
 let mainDiv = document.querySelector(".main-Div");
 let topMore = document.querySelector('.main-TopMore')
-let topless = document.querySelector('.main-TopLess')
+let topLess = document.querySelector('.main-TopLess')
 
 
 //Quote
@@ -113,21 +113,23 @@ document.addEventListener('DOMContentLoaded', () => {
     updateTime();
 });
 
+document.addEventListener('DOMContentLoaded', toggleMoreLess)
+
 //More-less 
 function toggleMoreLess(){
   let status = "less"
   if (moreLess.value == "more"){
     bottom.style.display = "block";
-    TopQuote.style.display = "none"
-    topless.style.display = "none"
-    topMore.style.display = "block"
+    TopQuote.style.display = "none";
+    topLess.style.display = "none";
+    topMore.style.display = "block";
     status = "more";
     console.log(status);
   } else if ( moreLess.value ==  "less" ){
     bottom.style.display ="none";
-    TopQuote.style.display = "block"
-    topMore.style.display = "none"
-    topless.style.display = "block"
+    TopQuote.style.display = "block";
+    topMore.style.display = "none";
+    topLess.style.display = "block";
     status = "less";
     console.log(status)
   }
