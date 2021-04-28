@@ -12,14 +12,14 @@
 </head>
 <body class="bgDay bgNight">
 <main class="main-Div">
-  <section class="main-TopLess main-TopMore">
+  <section class="main-TopLess">
     <div class="TopQuote">
       <div class="quote"></div>
       <div class="cite"></div>
     </div>
-    <div class="TopTime TopTimeMore">
-      <p class="topTimeGreeting topTimeGreetingMore"></p>
-        <div class="times1 timesMore">
+    <div class="TopTime ">
+      <p class="topTimeGreeting "></p>
+        <div class="times">
           <div class="time11">
             <h1 class="topTimeH1"> </h1>
             <h4 class="topTimeH4"></h4>
@@ -27,21 +27,36 @@
           <h3 class="location"></h3>
         </div>
     </div>    
+    <select name="moreLess" id="more-less" placeholder="More1" >
+      <option value="" disabled selected hidden>More/Less</option>
+      <option value="more">More</option>
+      <option value="less" >Less</option>
+    </select>
+  </section>
+
+
+    <section class="main-TopMore">
+    <div class=" TopTimeMore">
+      <p class=" topTimeGreetingMore"></p>
+        <div class=" timesMore">
+          <div class="timeTimeMore">
+            <h1 class="topTimeH1More"> </h1>
+            <h4 class="topTimeH4More"></h4>
+          </div>
+          <h3 class="locationMore"></h3>
+        </div>
+    </div>    
       
 
-        <select name="moreLess" id="more-less" placeholder="More1" >
-          
+        <select name="moreLess" id="more-lessMore" placeholder="More1" >
+          <option value="" disabled selected hidden>More/Less</option>
           <option value="more">More</option>
-          <option value="less" selected='less'>Less</option>
+          <option value="less" >Less</option>
         </select>
 
     </section>   
     
-    <!-- <select name="moreLess" id="more-less">
-      <option value="more">More</option>
-      <option value="less">Less</option>
-    </select>
-  </section> -->
+
   <section class="main-Bottom">
     <div class="bottom-1">
       <p class="bottomP1">Current timezone</p>

@@ -1,17 +1,23 @@
 //DOM
 let quoteDiv = document.querySelector('.TopQuote');
 let locationDiv = document.querySelector('.location');
+let locationDivMore = document.querySelector('.locationMore');
 let timeDiv = document.querySelector('.topTimeH1');
+let timeDivMore = document.querySelector('.topTimeH1More');
 let topTimeP = document.querySelector('.topTimeH4');
+let topTimePMore = document.querySelector('.topTimeH4More');
 let backPic = document.querySelector('.main-Div');
 let greetingDiv = document.querySelector('.topTimeGreeting');
+let greetingDivMore = document.querySelector('.topTimeGreetingMore');
 let moreLess = document.querySelector("#more-less");
+let moreLessMore = document.querySelector("#more-lessMore");
 let bottom = document.querySelector(".main-Bottom");
 let TopQuote = document.querySelector(".TopQuote");
 let mainDiv = document.querySelector(".main-Div");
 let topMore = document.querySelector('.main-TopMore')
 let topLess = document.querySelector('.main-TopLess')
-
+let greetingLess = document.querySelector('.topTimeGreeting')
+let greetingMore = document.querySelector('.topTimeGreetingMore')
 
 //Quote
 document.addEventListener("DOMContentLoaded", () => {
@@ -49,6 +55,7 @@ document.addEventListener("DOMContentLoaded", () => {
         if (response .ok){
             //upate DOM elements
             locationDiv.textContent= `In ${data.city}, ${data.country_code}`;
+            locationDivMore.textContent= `In ${data.city}, ${data.country_code}`;
         } else {
             console.log("Error@!")
         }
@@ -83,6 +90,8 @@ document.addEventListener('DOMContentLoaded', () => {
           //insert hours, mins, and TZ into html
           timeDiv.textContent = d;
           topTimeP.textContent = ` ${data.abbreviation}`;
+          timeDivMore.textContent = d;
+          topTimePMore.textContent = ` ${data.abbreviation}`;
           //insert bottom API output
           ba1.textContent =`${data.timezone}`;
           ba2.textContent = `${data.day_of_year}`;
@@ -91,16 +100,18 @@ document.addEventListener('DOMContentLoaded', () => {
           //update greeting and background based upon time
           if(a >= 5 && a < 12){
             greetingDiv.textContent = "Good morning g";
+            greetingDivMore.textContent = "Good morning g";
             bgNight.style.display="none"
             bgDay.style.display = "block"
           } else if (a >= 12 && a < 19){
             greetingDiv.textContent ="Good afternoon";
-
+            greetingDivMore.textContent ="Good afternoon";
             bgNight.style.display="none"
             bgDay.style.display = "block"
             
           } else if (a >= 19 || a < 5){
             greetingDiv.textContent ="Good evening";
+            greetingDivMore.textContent ="Good evening";
             bgDay.style.display="none"
             bgNight.style.display = "block"
             
@@ -118,25 +129,52 @@ document.addEventListener('DOMContentLoaded', toggleMoreLess)
 //More-less 
 function toggleMoreLess(){
   let status = "less"
-  if (moreLess.value == "more"){
+  if (this.value == "more"){
+    toggleMore();
+    console.log("more!")
+  } 
+  else if ( this.value ==  "less"){
+    toggleLess();
+    console.log("less!")
+  }
+}
+
+
+
+function toggleMore(){
     bottom.style.display = "block";
     TopQuote.style.display = "none";
     topLess.style.display = "none";
     topMore.style.display = "block";
-    status = "more";
-    console.log(status);
-  } else if ( moreLess.value ==  "less" ){
-    bottom.style.display ="none";
-    TopQuote.style.display = "block";
-    topMore.style.display = "none";
-    topLess.style.display = "block";
-    status = "less";
-    console.log(status)
-  }
+    greetingMore.style.display = "block";
+    greetingLess.style.display = "none";
+    
+    
 }
 
-function newStyle(){
+function toggleLess(){
+
+  bottom.style.display ="none";
+  TopQuote.style.display = "block";
+  topMore.style.display = "none";
+  topLess.style.display = "block";
+  greetingMore.style.display = "none";
+  greetingLess.style.display = "block";
   
 }
 
+
+
+
 moreLess.addEventListener('change', toggleMoreLess)
+moreLessMore.addEventListener('change', toggleMoreLess)
+
+
+
+
+
+
+
+
+
+
