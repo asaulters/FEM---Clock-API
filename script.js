@@ -139,7 +139,24 @@ function toggleMoreLess(){
   }
 }
 
-
+// function toggleMoreLessMore(){
+//   let status = "less"
+//   if (moreLessMore.value == "more"){
+//     bottom.style.display = "block";
+//     TopQuote.style.display = "none";
+//     topLess.style.display = "none";
+//     topMore.style.display = "block";
+//     status = "more";
+//     console.log(status + "more");
+//   } else if ( moreLessMore.value ==  "less" ){
+//     bottom.style.display ="none";
+//     TopQuote.style.display = "block";
+//     topMore.style.display = "none";
+//     topLess.style.display = "block";
+//     status = "less";
+//     console.log(status + "more")
+//   }
+// }
 
 function toggleMore(){
     bottom.style.display = "block";
