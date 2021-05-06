@@ -244,14 +244,14 @@
 @media screen and (min-width: 575px){
     .bgDay{
         background-image: url("/assets/tablet/bg-image-daytime.jpg");
-        background-size: cover;
+        background-size: 100% 100%;
         color: white;
         background-repeat: no-repeat;
         
     }
     .bgNight{
         background-image: url('/assets/tablet/bg-image-nighttime.jpg');
-        background-size: cover;
+        background-size: 100% 100%;
         background-repeat: no-repeat;
         color: white;
         
@@ -259,9 +259,9 @@
 
     .main-Div{
         display: grid;
-        grid-template-rows: 65%  35%;
-        height: 1000px;
-        /* position: relative; */
+        grid-template-rows: 65% 35%;
+        height: 95vh;
+        position: relative;
         box-sizing: border-box;
     }
 
@@ -297,6 +297,11 @@
         font-size: 1.5rem;
     }
 
+    .main-Bottom{
+        position: absolute;
+        bottom: 0;
+        height: 300px;
+    }
     .bottom-1{
         grid-template-columns: 50% 50%;
         grid-template-rows: 15% 35% 15% 35%;
