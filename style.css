@@ -1,8 +1,5 @@
 
-.try{
-    display: inline-block;
-    box-sizing: border-box;
-}
+
 .main-Div{
     display: grid;
     grid-template-rows: 65% 35%;
@@ -49,7 +46,7 @@
 }
 
 .main-TopMore{
-    display: grid;
+    /* display: grid; */
     grid-template-columns: 1fr;
     grid-template-rows: 50% 50% ;
     height: 90vh;
@@ -345,4 +342,121 @@
         text-align: left;
     }
 
+}
+
+/* --------------------------------------------------
+--------------------------------------------------
+Desktop small--------------------------------------------------
+--------------------------------------------------*/
+
+
+
+
+@media screen and (min-width: 1000px) {
+    .bgDay{
+        background-image: url("/assets/desktop/bg-image-daytime.jpg");
+        background-size: 100% 100%;
+        color: white;
+        background-repeat: no-repeat;
+        
+    }
+    .bgNight{
+        background-image: url('/assets/desktop/bg-image-nighttime.jpg');
+        background-size: 100% 100%;
+        background-repeat: no-repeat;
+        color: white;
+        
+    }
+    .main-TopLess{
+        display: grid ;
+        grid-template-columns: 75% 25%;
+        grid-template-rows: 20% 40% 40%;
+    }
+
+    .TopQuote{
+        grid-column: 1/2;
+        font-size: 25px;
+    }
+    .TopTime{
+        grid-column: 1/2;
+        align-self: flex-end;
+        margin-bottom: 10%;
+    }
+    #more-less{
+        grid-column: 2/3;
+        grid-row: 3/4;
+        align-self: flex-end;
+        margin-bottom: 40%;
+    }
+    .topTimeH1,
+    .topTimeH1More{
+        font-size: 15rem;
+    }
+    .main-TopMore{
+        display: none ;
+        grid-template-columns: 75% 25%;
+        grid-template-rows: 100%;
+        height: 60vh;
+    }
+
+
+    .TopTimeMore{
+        grid-column: 1/2;
+        align-self: flex-end;
+        margin-bottom: 55%;
+    }
+    #more-lessMore{
+        grid-column: 2/3;
+        align-self: flex-end;
+        margin-bottom: 40%;
+    }
+
+    .main-Bottom{
+        height: 40vh;
+    }
+
+}
+
+
+/* ----------------------------------------------
+Destop Mid----------------------------------------------
+----------------------------------------------*/
+@media screen and (min-width:1400px){
+    .main-TopMore{
+        color: red;
+        /* margin-bottom: 20%; */
+    } 
+
+    .TopTimeMore{
+        align-self: center;
+        /* margin-bottom: 10%; */
+    }
+}
+
+/* ----------------------------------------------
+Destop LArge----------------------------------------------
+----------------------------------------------*/
+
+@media screen and (min-width:1700px){
+    .main-TopMore,
+    .main-TopLess{
+        color: Blue;
+        height: max-content;
+        /* margin-bottom: -5%; */
+    } 
+
+    .TopTimeMore{
+        align-self: center;
+        padding-top: 15%;
+    }
+
+    .topTimeGreetingMore{
+        padding-bottom: 50px;
+        padding-top: -50px;
+    }
+    .TopTime{
+        margin-bottom: 0%;
+        margin-top: 5%;
+        /* align-self:auto; */
+    }
 }

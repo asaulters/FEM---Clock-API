@@ -99,19 +99,19 @@ document.addEventListener('DOMContentLoaded', () => {
           ba4.textContent = `${data.week_number}`;
           //update greeting and background based upon time
           if(a >= 5 && a < 12){
-            greetingDiv.textContent = "Good morning g";
-            greetingDivMore.textContent = "Good morning g";
+            greetingDiv.textContent = "Good morning, it's currently";
+            greetingDivMore.textContent = "Good morning, it's currently";
             bgNight.style.display="none"
             bgDay.style.display = "block"
           } else if (a >= 12 && a < 19){
-            greetingDiv.textContent ="Good afternoon";
-            greetingDivMore.textContent ="Good afternoon";
+            greetingDiv.textContent ="Good afternoon, it's currently";
+            greetingDivMore.textContent ="Good afternoon, it's currently";
             bgNight.style.display="none"
             bgDay.style.display = "block"
             
           } else if (a >= 19 || a < 5){
-            greetingDiv.textContent ="Good evening";
-            greetingDivMore.textContent ="Good evening";
+            greetingDiv.textContent ="Good evening, it's currently";
+            greetingDivMore.textContent ="Good evening, it's currently";
             bgDay.style.display="none"
             bgNight.style.display = "block"
             
@@ -145,7 +145,7 @@ function toggleMore(){
     bottom.style.display = "block";
     TopQuote.style.display = "none";
     topLess.style.display = "none";
-    topMore.style.display = "block";
+    topMore.style.display = "grid";
     greetingMore.style.display = "block";
     greetingLess.style.display = "none";
     moreLess.value = "more";
@@ -158,7 +158,7 @@ function toggleLess(){
   bottom.style.display ="none";
   TopQuote.style.display = "block";
   topMore.style.display = "none";
-  topLess.style.display = "block";
+  topLess.style.display = "grid";
   greetingMore.style.display = "none";
   greetingLess.style.display = "block";
   moreLess.value = "less";
