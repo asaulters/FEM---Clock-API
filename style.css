@@ -238,6 +238,7 @@
 ====================================================
 =========Tablet==============================
 ====================================*/
+
 @media screen and (min-width: 575px){
     .bgDay{
         background-image: url("/assets/tablet/bg-image-daytime.jpg");
@@ -340,6 +341,9 @@
         grid-column: 2/3;
         grid-row: 4/5;
         text-align: left;
+    }
+    #more-lessMore{
+        margin-top: 10%;
     }
 
 }
@@ -459,4 +463,93 @@ Destop LArge----------------------------------------------
         margin-top: 5%;
         /* align-self:auto; */
     }
+
+    #more-less,
+    #more-lessMore{
+        margin-bottom: 10%;
+    }
+
+    .main-TopMore{
+        /* margin-bottom: 20%; */
+        margin-top: -5%;
+        padding-bottom: 20%;
+        height: 60vh;
+    }
+    /* .timeTimeMore{
+        margin-bottom: 20%;
+        margin-top: -20%;
+    } */
+
+
+}
+
+/* ----------------------------------------------
+Destop XL----------------------------------------------
+----------------------------------------------*/
+
+@media screen and (min-width:1800px){
+    .main-TopMore,
+    .main-TopLess{
+        color: purple;
+        height: max-content;
+        /* margin-bottom: -5%; */
+    } 
+
+    #more-less{
+        margin-bottom: 10%;
+    }
+
+    .topTimeGreeting{
+        margin-bottom: -17%;
+    }
+    .TopTime{
+        margin-top: 0%;
+    }
+
+    .main-TopMore{
+        /* margin-bottom: 20%; */
+        margin-top: -5%;
+        padding-bottom: 20%;
+        height: 50vh;
+    }
+    #more-lessMore{
+        margin-bottom: -10%;
+    }
+}
+
+/* ----------------------------------------------
+Destop XXL----------------------------------------------
+----------------------------------------------*/
+
+@media screen and (min-width:2100px){
+    .main-TopMore,
+    .main-TopLess{
+        color: green;
+        height: max-content;
+        /* margin-bottom: -5%; */
+    } 
+    .main-TopLess{
+        height:100vh;
+    }
+
+    #more-less{
+        /* padding-bottom: 5%; */
+    }
+
+    .topTimeGreeting{
+        padding-bottom: 5%;
+    }
+    .TopTime{
+        padding-bottom: 5%;
+    }
+    .main-TopMore{
+        /* margin-bottom: 20%; */
+        /* margin-top: -5%; */
+        padding-bottom: 20%;
+        height: 50vh;
+    }
+    .topTimeGreetingMore{
+        padding-bottom: 10%;
+    }
+    
 }
